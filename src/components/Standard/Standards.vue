@@ -2,38 +2,40 @@
   <div class="root-main">
     <StandardsHeader></StandardsHeader>
     <div class="container">
-
-      <div class="row justify-content-center">
-
-        <div class="col-md-4">
-          <!-- Кнопка "Назад", возвращающая пользователя обратно на главную страницу !-->
-          <div class="row p-3 m-2">
-              <button type="button" class="btn btn-secondary" @click="$router.push('/')" id="toHome">
-                Назад
-              </button>
-          </div>
-          <div class="row p-3 m-2">
-            <button type="button" class="btn btn-success" id="changeStandards">
-              Редактировать
-            </button>
-          </div>
+      <div class="row">
+        <!-- Кнопка "Назад", возвращающая пользователя обратно на главную страницу !-->
+        <div class="col" id="returnButton">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$router.push('/')"
+            id="toHome"
+          >
+            Назад
+          </button>
+        </div>
+        <!-- Кнопка "Редактировать", позволяющая исправлять подобранные стандарты !-->
+        <div class="col" id="editButton">
+          <button type="button" class="btn btn-success" id="changeStandards">
+            Редактировать
+          </button>
+        </div>
+        <div class="col" id="toCompetenceModelButton">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            @click="$router.push('/')"
+            id="toHome"
+          >
+            Создать компетентностную модель
+          </button>
         </div>
 
-        <div class="wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <!-- Таблица с профстандартами !-->
-<!--                <StandardsTable :standardList="standards"></StandardsTable>-->
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Таблица с профстандартами !-->
+        <StandardsTable :standardList="standards"></StandardsTable>
       </div>
     </div>
-
   </div>
-  <StandardsTable></StandardsTable>
 </template>
 
 <script>
@@ -49,7 +51,7 @@ export default {
     specializationCode: String,
     subjMajor: String,
     resourceToDownload: String,
-    tags: Array
+    tags: Array,
   },
 
   data() {
@@ -58,8 +60,8 @@ export default {
       errors: [],
 
       // Список подобранных простандартов
-      standards: []
-    }
+      standards: [],
+    };
   },
   methods: {
     getStandards() {
@@ -68,7 +70,7 @@ export default {
         specializationCode: this.specializationCode,
         subjMajor: this.subjMajor,
         resourceToDownload: this.resourceToDownload,
-        keywords: this.tags.map(obj => obj.text).join(',')
+        keywords: this.tags.map((obj) => obj.text).join(","),
       };
       console.log(searchData);
 
@@ -80,26 +82,34 @@ export default {
           console.error(err);
         }
       }*/
-      MainDataService.searchStandards(searchData).then(response => {
-        this.standards = response.data;
-      }).catch(e => {
-        if (e.request) {
-          console.log(e.request)
-        }
-        if (e.response) {
-          console.log(e.response)
-        }
-      })
+      MainDataService.searchStandards(searchData)
+        .then((response) => {
+          this.standards = response.data;
+        })
+        .catch((e) => {
+          if (e.request) {
+            console.log(e.request);
+          }
+          if (e.response) {
+            console.log(e.response);
+          }
+        });
 
       console.log(this.standards);
-      },
+    },
   },
   mounted: function () {
     this.getStandards();
-  }
-}
+  },
+};
 </script>
 
 <style scoped>
+#editButton {
+  text-align: right;
+}
 
+#toCompetenceModelButton {
+  text-align: right;
+}
 </style>

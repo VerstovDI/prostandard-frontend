@@ -9,12 +9,14 @@
   },
   "dependencies": {
     "@jobinsjp/vue3-datatable": "^1.0.14",
+    "@quasar/extras": "^1.0.0",
     "@revolist/vue-datagrid": "^3.0.98",
     "@revolist/vue3-datagrid": "^3.0.97",
     "@sipec/vue3-tags-input": "^3.0.4",
     "axios": "^0.21.4",
     "buefy": "^0.9.19",
     "core-js": "^3.6.5",
+    "quasar": "^2.0.0",
     "vue": "^3.0.0",
     "vue-axios": "^3.2.4",
     "vue-circle-counter": "^3.0.0",
@@ -30,7 +32,10 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "sass": "1.32.12",
+    "sass-loader": "^10.1.0",
+    "vue-cli-plugin-quasar": "~4.0.4"
   },
   "eslintConfig": {
     "root": true,

@@ -8,20 +8,21 @@
 
 <script>
 export default {
-  name: 'App',
-  components: {}
-}
+  name: "App",
+  components: {},
+};
 </script>
 
 <style>
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  background-image: url('../src/assets/MephiBlur.jpg');
+  background-image: url("../src/assets/MephiBlur.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
