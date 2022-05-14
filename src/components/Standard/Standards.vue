@@ -1,51 +1,43 @@
 <template>
-  <div class="root-main">
-    <StandardsHeader></StandardsHeader>
-    <div class="container">
-      <div class="row">
-        <!-- Кнопка "Назад", возвращающая пользователя обратно на главную страницу !-->
-        <div class="col" id="returnButton">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$router.push('/')"
-            id="toHome"
-          >
-            Назад
-          </button>
-        </div>
-        <!-- Кнопка "Редактировать", позволяющая исправлять подобранные стандарты !-->
-        <div class="col" id="editButton">
-          <button type="button" class="btn btn-success" id="changeStandards">
-            Редактировать
-          </button>
-        </div>
-        <div class="col" id="toCompetenceModelButton">
-          <button
-            type="button"
-            class="btn btn-secondary"
-            @click="$router.push('/')"
-            id="toHome"
-          >
-            Создать компетентностную модель
-          </button>
-        </div>
-
-        <!-- Таблица с профстандартами !-->
-        <StandardsTable :standardList="standards"></StandardsTable>
+  <div class="container">
+    <div class="row pt-5 pb-5">
+      <!-- Кнопка "Назад", возвращающая пользователя обратно на главную страницу !-->
+      <div class="col" id="returnButton">
+        <button
+          type="button"
+          class="btn btn-primary btn-md"
+          @click="$router.push('/')"
+          id="toHome"
+        >
+          Назад
+        </button>
       </div>
+      <!-- Кнопка "Создать компетентностную модель !-->
+      <div class="col" id="toCompetenceModelButton">
+        <button
+          type="button"
+          class="btn btn-primary btn-md"
+          @click="$router.push('/')"
+          id="toHome"
+        >
+          Создать компетентностную модель
+        </button>
+      </div>
+
+      <!-- Таблица с профстандартами !-->
+      <StandardsTable :standardList="standards"></StandardsTable>
     </div>
   </div>
 </template>
 
 <script>
 import MainDataService from "@/services/MainDataService";
-import StandardsHeader from "@/components/Standard/StandardsHeader";
+//import StandardsHeader from "@/components/Standard/StandardsHeader";
 import StandardsTable from "@/components/Standard/StandardsTable";
 
 export default {
   name: "Standards",
-  components: { StandardsTable, StandardsHeader },
+  components: { StandardsTable },
   props: {
     educationLevel: String,
     specializationCode: String,
@@ -111,5 +103,9 @@ export default {
 
 #toCompetenceModelButton {
   text-align: right;
+}
+
+.btn-md {
+  font-size: 14px;
 }
 </style>

@@ -8,6 +8,7 @@
       no-data-label="По заданным критерием стандартов не подобрано"
       no-results-label="По заданным фильтрам стандартов не найдено"
       rows-per-page-label="Стандартов на страницу"
+      color="primary"
     >
       <!-- <template v-slot:no-data="{ icon, message, filter }">
           <div class="full-width row flex-center text-accent q-gutter-sm">

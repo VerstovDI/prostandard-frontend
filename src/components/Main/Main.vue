@@ -5,7 +5,7 @@
       <MainHeader></MainHeader>
 
       <!-- Контейнер с формами ввода !-->
-      <div class="container">
+      <div class="container" id="formsContainer">
         <div class="row">
           <div class="col-md-6">
             <form role="form">
@@ -115,7 +115,7 @@
             </form>
           </div>
 
-          <div class="col-md-4">
+          <div class="col-md-4" id="managementButtons">
             <!-- Кнопка "Сброс" !-->
             <div class="row p-3 m-2">
               <button
@@ -158,7 +158,7 @@
             </div>
 
             <!-- Кнопка "Подобрать" !-->
-            <div class="row p-3 m-2">
+            <div class="row p-3 m-2" id="">
               <button
                 type="button"
                 class="btn btn-success"
@@ -346,5 +346,13 @@ export default {
   cursor: pointer;
   padding-left: 20px;
   vertical-align: middle;
+}
+
+#formsContainer {
+  font-size: 1.5vw;
+}
+
+#management-buttons {
+  font-size: 1.5vw;
 }
 </style>

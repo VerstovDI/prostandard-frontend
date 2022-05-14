@@ -22,6 +22,9 @@ body {
 body {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
   background-image: url("../src/assets/MephiBlur.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;

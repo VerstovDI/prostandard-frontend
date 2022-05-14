@@ -17,7 +17,15 @@ const routes = [
         props: true,
         //component: Standards
         component: () => import("@/components/Standard/Standards")
+    },
+
+    {
+        path: "/CompetenceModel",
+        name: "CompetenceModel",
+        //component: CompetenceModel
+        component: () => import("@/components/CompetenceModel/CompetenceModel")
     }
+
 ];
 
 const router = createRouter({
